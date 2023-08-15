@@ -7,7 +7,7 @@ const { title } = Astro.props;
 ---
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="description" content="Astro description">
@@ -16,7 +16,14 @@ const { title } = Astro.props;
 		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>
 	</head>
-	<body class="bg-neutral">
+	<body class="bg-slate-950">
 		<slot />
 	</body>
 </html>
+
+<style is:global>
+	@font-face {
+		font-family: 'Roboto-Regular';
+		src: url('/assets/fonts/Roboto-Regular.ttf');
+	}
+</style>

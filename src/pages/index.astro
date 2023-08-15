@@ -1,13 +1,80 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import Card from '../components/Card.astro';
+import Layout from "../layouts/Layout.astro";
 ---
 
 <Layout title="Kelvin Guerrero">
-	<main>
-	</main>
+    <header class="mx-4 md:mx-0">
+        <nav
+            class="text-white flex justify-between items-center my-4 w-full max-w-4xl mx-auto"
+        >
+            <p class="font-bold text-xl">🚀kelvin.dev</p>
+            <a
+                class="telegram inline-flex items-center justify-center w-10 h-10 bg-blue-600 rounded-full shadow-md hover:bg-blue-700"
+                href="#"
+            >
+                <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="w-6 h-6"
+                    width="30"
+                    height="25"
+                    viewBox="0 0 24 24"
+                    stroke-width="2"
+                    stroke="currentColor"
+                    fill="none"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                >
+                    <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                    <path d="M15 10l-4 4l6 6l4 -16l-18 7l4 2l2 6l3 -4"></path>
+                </svg>
+            </a>
+        </nav>
+    </header>
+
+    <section class="mt-28 sm:mt-48">
+        <div class="grid place-items-center">
+			<p class="efectoLetra text-white uppercase min-[280px]:text-[30px] text-2xl sm:text-5xl md:text-7xl lg:text-9xl">
+				Kelvin Guerrero 
+			</p>
+		</div>
+        <p
+            class="text-center text-white text-xs md:text-xl lg:text-2xl opacity-70 mt-10 max-w-[195px] md:max-w-md lg:max-w-xl mx-auto"
+        >
+            Creando experiencias web completas desde la interfaz hasta el núcleo
+            funcional.
+        </p>
+
+        <div class="max-w-lg mx-auto grid place-items-center">
+            <img
+                class=""
+                src="/assets/img/animoji.png"
+                alt="Kelvin Guerrero Animoji"
+            />
+        </div>
+    </section>
 </Layout>
 
 <style>
-	
+    .efectoLetra {
+        display: block;
+        font-family: monospace;
+        white-space: nowrap;
+        border-right: 3px solid;
+        width: 15.1ch;
+        animation: typing 2s steps(16), blink 0.5s infinite step-end alternate;
+
+        overflow: hidden;
+    }
+
+    @keyframes typing {
+        from {
+            width: 0;
+        }
+    }
+
+    @keyframes blink {
+        50% {
+            border-color: transparent;
+        }
+    }
 </style>
