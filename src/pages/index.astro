@@ -1,44 +1,22 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import Card from "../components/Card.astro";
+import Header from "../components/Header.astro";
 ---
 
 <Layout title="Kelvin Guerrero | Desarrollador Full-stack">
-    <header class="mx-4 py-4 sticky top-0">
-        <nav
-            class="text-white flex justify-between items-center max-w-7xl mx-auto"
-        >
-            <p class="font-bold text-xl">🚀kelvin.dev</p>
-            <a
-                class="telegram inline-flex items-center justify-center w-10 h-10 bg-blue-600 rounded-full shadow-md hover:bg-blue-700"
-                href="#"
-            >
-                <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    class="w-6 h-6"
-                    width="30"
-                    height="25"
-                    viewBox="0 0 24 24"
-                    stroke-width="2"
-                    stroke="currentColor"
-                    fill="none"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                >
-                    <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-                    <path d="M15 10l-4 4l6 6l4 -16l-18 7l4 2l2 6l3 -4"></path>
-                </svg>
-            </a>
-        </nav>
-    </header>
+    <Header />
 
     <section class="h-screen flex flex-col justify-center">
         <div class="grid place-items-center">
-			<p class="efectoLetra text-white uppercase min-[280px]:text-[30px] text-2xl sm:text-5xl md:text-7xl lg:text-9xl">
-				Kelvin Guerrero 
-			</p>
-		</div>
+            <p
+                class="efectoLetra text-white uppercase min-[280px]:text-[30px] text-2xl sm:text-5xl md:text-7xl lg:text-9xl"
+            >
+                Kelvin Guerrero
+            </p>
+        </div>
         <p
-            class="text-center text-white text-xs md:text-xl lg:text-2xl opacity-70 mt-10 max-w-[195px] md:max-w-md lg:max-w-xl mx-auto"
+            class="text-center text-white text-xs md:text-xl lg:text-2xl mt-10 max-w-[195px] md:max-w-md lg:max-w-xl mx-auto"
         >
             Creando experiencias web completas desde la interfaz hasta el núcleo
             funcional.
@@ -54,22 +32,31 @@ import Layout from "../layouts/Layout.astro";
     </section>
     <section class="h-screen">
         <div class="grid place-items-center mb-8">
-            <p class="text-white uppercase min-[280px]:text-[30px] text-2xl sm:text-5xl md:text-7xl lg:text-9xl">Proyectos</p>
+            <p
+                class="text-white uppercase min-[280px]:text-[30px] text-2xl sm:text-5xl md:text-7xl lg:text-9xl"
+            >
+                Proyectos
+            </p>
         </div>
-        <div class="cards max-w-lg flex flex-col items-center gap-3">
-            <div class="card w-80 bg-slate-800 p-4 rounded">
-                <div class="card-img">
-                    <img class="w-full" src="/assets/img/digital_dreams.png" alt="Imagen de un dashboard de usuarios y equipos">
-                </div>
-                <p class="card-title text-white font-bold my-2">DigitalDreams Dashboard</p>
-            </div>
-
-            <div class="card w-80 bg-slate-700 p-4 rounded">
-                <div class="card-img">
-                    <img class="w-full" src="/assets/img/digital_dreams.png" alt="Imagen de un dashboard de usuarios y equipos">
-                </div>
-                <p class="card-title text-white font-bold my-2">DigitalDreams Dashboard</p>
-            </div>
+        <div class="cards max-w-lg flex flex-col items-center gap-5">
+            <Card
+                src="digital_dreams.png"
+                title="DigitalDreams Dashboard"
+                alt="Dashboard de usuarios y equipos"
+                url=""
+            />
+            <Card
+                src="nameMyPet.png"
+                title="Name my pet"
+                alt="App para generar nombres de perros y gatos"
+                url=""
+            />
+            <Card
+                src="gym_verse.png"
+                title="TheGymVerse"
+                alt="Guia de entrenamiento fisico"
+                url=""
+            />
         </div>
     </section>
 </Layout>
