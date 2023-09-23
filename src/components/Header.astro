@@ -1,27 +1,135 @@
-<header class="mx-4 py-4 sticky top-0 bg-slate-950 bg-opacity-70 backdrop-blur-md">
+<header>
     <nav
-        class="text-white flex justify-between items-center max-w-7xl mx-auto"
+        class="flex justify-between py-10 m-auto px-10 text-lg font-medium tracking-wide md:items-center"
     >
-        <p class="font-bold text-xl">🚀kelvin.dev</p>
-        <a
-            class="telegram inline-flex items-center justify-center w-10 h-10 bg-blue-600 rounded-full shadow-md hover:bg-blue-700"
-            href="#"
-        >
-            <svg
-                xmlns="http://www.w3.org/2000/svg"
-                class="w-6 h-6"
-                width="30"
-                height="25"
-                viewBox="0 0 24 24"
-                stroke-width="2"
-                stroke="currentColor"
-                fill="none"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-            >
-                <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-                <path d="M15 10l-4 4l6 6l4 -16l-18 7l4 2l2 6l3 -4"></path>
-            </svg>
+        <a href="">
+            <span class="text-lg font-black">Kelvin</span>
         </a>
+        <div
+            id="menu"
+            class="bg-white dark:bg-slate-800 p-7 h-[380px] w-[200px] md:flex flex-col items-start justify-around rounded-lg text-dark dark:text-white md:flex-row md:w-full md:py-0 md:h-[50px] md:bg-inherit md:dark:bg-slate-950 hidden"
+        >
+            <ul
+                class="flex h-5/6 flex-col justify-around md:flex-row md:justify-center w-full"
+            >
+                <li class="md:px-5 hover:text-sky-600">
+                    <a href="">Inicio</a>
+                </li>
+                <li class="md:px-5 hover:text-sky-600">
+                    <a href="">Proyectos</a>
+                </li>
+                <li class="md:px-5 hover:text-sky-600">
+                    <a href="">Sobre Mi</a>
+                </li>
+                <li class="md:px-5 hover:text-sky-600">
+                    <a href="">Contacto</a>
+                </li>
+            </ul>
+            <!--Btn modo oscuro -->
+            <button id="modoOscuro">
+                <i class="bi bi-moon-stars-fill text-sky-600 text-2xl"></i>
+            </button>
+        </div>
+        <!-- Btn menu -->
+        <button id="btn-menu" class="absolute top-10 right-12 md:hidden">
+            <span
+                class="br-1 block bg-black dark:bg-white my-2 rounded-md h-[3px] w-[28px]"
+            ></span>
+            <span
+                class="br-2 block bg-black dark:bg-white my-2 rounded-md h-[3px] w-[28px]"
+            >
+            </span>
+            <span
+                class="br-3 block bg-black dark:bg-white my-2 rounded-md h-[3px] w-[28px]"
+            ></span>
+        </button>
     </nav>
 </header>
+
+<script type="module">
+    const $ = (selector) => document.querySelector(selector);
+    const $$ = (selector) => document.querySelectorAll(selector);
+    // Variables
+    const btnMenu = $("#btn-menu");
+    const menuItems = $("#menu");
+
+    const menuBtnSpans = $$("#btn-menu span");
+    const links = $$("#menu a");
+
+    // Abrir menu
+    btnMenu.addEventListener("click", () => {
+        menuItems.classList.toggle("hidden");
+
+        menuBtnSpans.forEach((span) => {
+            span.style = `transition: transform 0.3s ease-in-out;`
+            span.classList.toggle("animado");
+        });
+    });
+
+    links.forEach((link) => {
+        link.addEventListener("click", () => {
+            menuItems.classList.add("hidden");
+            menuBtnSpans.forEach((span) => {
+                span.classList.remove("animado");
+            });
+        });
+    });
+
+    // Cerrar menu on RESIZE
+    window.onresize = function () {
+        let w = window.outerWidth;
+        if (w > 768) {
+            menuItems.classList.add("hidden");
+            menuBtnSpans.forEach((span) => {
+                span.classList.remove("animado");
+            });
+        }
+    };
+
+    /** Dark Mode */
+    const btnModoOscuro = $("#modoOscuro");
+
+    btnModoOscuro.addEventListener("click", function () {
+        // if set via local storage previously
+        if (localStorage.getItem("color-theme")) {
+            if (localStorage.getItem("color-theme") === "light") {
+                document.documentElement.classList.add("dark");
+                localStorage.setItem("color-theme", "dark");
+            } else {
+                document.documentElement.classList.remove("dark");
+                localStorage.setItem("color-theme", "light");
+            }
+
+            // if NOT set via local storage previously
+        } else {
+            if (document.documentElement.classList.contains("dark")) {
+                document.documentElement.classList.remove("dark");
+                localStorage.setItem("color-theme", "light");
+            } else {
+                document.documentElement.classList.add("dark");
+                localStorage.setItem("color-theme", "dark");
+            }
+        }
+    });
+</script>
+
+<style>
+    .br-2.animado {
+        opacity: 0;
+        transition: opacity 0.5s ease-in-out;
+    }
+
+    .br-1.animado,
+    .br-3.animado {
+        transform-origin: 0% 100%;
+        transition: transform 0.3s ease-in-out; /* Agrega la propiedad transition aquí */
+    }
+
+    .br-1.animado {
+        transform: rotate(45deg) translate(9px, 8px);
+        transition: transform 0.3s ease-in-out;
+    }
+    .br-3.animado {
+        transform: rotate(-45deg) translate(-6px, 8px);
+    }
+</style>

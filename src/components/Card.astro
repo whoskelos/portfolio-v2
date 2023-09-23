@@ -9,55 +9,55 @@ export interface props {
 const { src, title, alt, url } = Astro.props;
 ---
 
-<div class="card w-80 bg-slate-800 p-4 rounded">
-    <div class="card-img">
-        <a href={url}>
-            <img class="w-full aspect-[72/35]" src=`assets/img/${src}` alt={alt} />
-        </a>
-    </div>
-    <p class="card-title text-white font-bold my-2">{title}</p>
-</div>
+<section id="wrapper" class="wrapper [perspective:1000px]">
+    <article
+        class="card w-[350px] md:w-[600px] p-4 shadow-2xl border-4 border-indigo-600/20 relative rounded-md mb-10"
+    >
+        <div class="card-img">
+            <a href={url}>
+                <img
+                    class="w-full aspect-[72/35]"
+                    src=`assets/img/${src}`
+                    alt={alt}
+                />
+            </a>
+        </div>
+        <div
+            class="absolute inset-0 w-full h-full bg-black/10 backdrop-saturate-20 backdrop-blur-sm -z-10"
+        >
+        </div>
+    </article>
+</section>
 
-<style>
-    .card {
-        box-shadow: 8px 2px 15px #292929;
-        position: relative;
-        overflow: hidden;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-    }
+<style></style>
 
-    .card::before {
-        content: "";
-        position: absolute;
-        height: 400px;
-        width: 400px;
-        background-image: conic-gradient(#dafff3 16deg, transparent 120deg);
-        animation: rotar 3.5s linear infinite;
-    }
+<script>
+    const $ = (selector) => document.querySelector(selector);
+    const $$ = (selector) => document.querySelectorAll(selector);
+    const wrappers = $$(".wrapper");
 
-    @keyframes rotar {
-        from {
-            transform: rotate(0deg);
-        }
+    const cards = $$(".card");
 
-        to {
-            transform: rotate(-360deg);
-        }
-    }
-
-    .card::after {
-        content: "";
-        position: absolute;
-        height: 202px;
-        width: 308px;
-        background-color: rgb(30 41 59);
-    }
-
-    .card-img, .card-title {
-        z-index: 2;
-        background-color: transparent;
-    }
-</style>
+    
+    cards.forEach((card) => {
+        wrappers.forEach((wrapper) => {
+            const { width, height } = wrapper.getBoundingClientRect();
+            const halfWidth = width / 2;
+            const halfHeight = height / 2;
+            wrapper.addEventListener("mousemove", (event) => {
+                card.style.transition = "none";
+                const { offsetX, offsetY } = event;
+    
+                const rotationX = ((offsetX - halfWidth) / halfWidth) * 10;
+                const rotationY = ((offsetY - halfHeight) / halfHeight) * 10;
+    
+                card.style.transform = `rotateX(${rotationX}deg) rotateY(${rotationY}deg)`;
+            });
+    
+            wrapper.addEventListener("mouseleave", () => {
+                card.style.transition = `transform .5s ease-in-out`;
+                card.style.transform = `rotateX(0deg) rotateY(0deg)`;
+            });
+        })
+    });
+</script>
