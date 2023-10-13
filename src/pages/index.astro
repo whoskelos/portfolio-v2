@@ -1,5 +1,7 @@
 ---
 import Header from "../components/Header.astro";
+import Job from "../components/Job.astro";
+import Project from "../components/Project.astro";
 import Layout from "../layouts/Layout.astro";
 ---
 
@@ -7,30 +9,256 @@ import Layout from "../layouts/Layout.astro";
     <Header />
     <main>
         <!--Seccion HERO -->
+        <section class="my-0 flex flex-col lg:flex-row lg:h-[850px]">
+            <div class="p-10 lg:w-[80%] lg:h-[500px] lg:self-center">
+                <h1
+                    class="text-sky-600 dark:text-sky-300 text-2xl font-bold tracking-widest leading-10"
+                >
+                    Hola, soy
+                </h1>
+                <p
+                    class="py-2 text-3xl font-bold text-slate-600 dark:text-slate-300"
+                >
+                    Kelvin Guerrero
+                </p>
+                <p
+                    class="text-3xl font-bold text-slate-500 dark:text-slate-600"
+                >
+                    Desarrollador Web Full stack
+                </p>
+                <p class="mt-5 text-lg">
+                    Creando experiencias web completas desde la interfaz hasta
+                    el nucleo funcional.
+                </p>
+                <!--Redes sociales -->
+                <div class="py-6 [&>a]:pr-2 text-2xl [&>a>i]:px-2">
+                    <a
+                        href="https://twitter.com/whoskelos"
+                        class="hover:text-sky-600"
+                        target="_blank"><i class="bi bi-twitter"></i></a
+                    >
+                    <a
+                        href="https://www.instagram.com/ng.apps/"
+                        class="hover:text-sky-600"
+                        target="_blank"><i class="bi bi-instagram"></i></a
+                    >
+                    <a
+                        href="https://www.linkedin.com/in/kelvinguerreromite/"
+                        class="hover:text-sky-600"
+                        target="_blank"><i class="bi bi-linkedin"></i></a
+                    >
+                    <a
+                        href="https://github.com/whoskelos"
+                        class="hover:text-sky-600"
+                        target="_blank"><i class="bi bi-github"></i></a
+                    >
+                </div>
+                <div class="">
+                    <button
+                        type="button"
+                        id="btn-contratar"
+                        class="border-2 rounded border-sky-500 p-4 w-[250px] text-lg tracking-widest hover:bg-sky-500 hover:dark:text-slate-900 ease-out duration-300"
+                        >Contratar</button
+                    >
+                </div>
+            </div>
+            <!--Contenedor para la imagen -->
+            <div class="my-10 w-full">
+                <div
+                    class="w-[300px] h-[320px] m-auto bg-[url('./assets/img/kelvin-ia.png')] lg:bg-[url('./assets/img/kelvin-ia.png')] bg-cover rounded-lg lg:w-[100%] lg:h-[100%] lg:bg-center lg:bg-no-repeat lg:bg-[length:450px_450px]"
+                >
+                </div>
+            </div>
+        </section>
+        <!--Seccion experiencial laboral -->
+
+        <h2
+            class="text-3xl text-slate-700 dark:text-white font-bold tracking-widest w-[85%] m-auto text-center pt-8"
+        >
+            Experiencia laboral
+        </h2>
+        <section
+            class="my-12 flex flex-col w-[84%] m-auto lg:flex-row lg:w-[87%] lg:my-28"
+            id="jobSection"
+        >
+            <div class="flex justify-between lg:flex-col lg:w-[20%]">
+                <button
+                    type="button"
+                    id="link1"
+                    data-id="job1"
+                    class="border-b-2 hover:dark:bg-slate-700 w-full px-4 py-1 hover:bg-white focus:bg-white focus:border-sky-500 focus:dark:bg-slate-700 lg:border-l-2 lg:border-b-0 lg:h-full lg:text-left border-sky-500 bg-white dark:bg-slate-700"
+                    >Via Celere (Sermicro)</button
+                >
+                <button
+                    type="button"
+                    data-id="job2"
+                    class="border-b-2 hover:dark:bg-slate-700 w-full px-4 py-1 hover:bg-white focus:bg-white focus:border-sky-500 focus:dark:bg-slate-700 lg:border-l-2 lg:border-b-0 lg:h-full lg:text-left"
+                    >Ayto. de la Rozas (Sermicro)</button
+                >
+                <button
+                    type="button"
+                    data-id="job3"
+                    class="border-b-2 hover:dark:bg-slate-700 w-full px-4 py-1 hover:bg-white focus:bg-white focus:border-sky-500 focus:dark:bg-slate-700 lg:border-l-2 lg:border-b-0 lg:h-full lg:text-left"
+                    >CEF (Centro de Estudios Financieros)</button
+                >
+            </div>
+
+            <!--CONTENEDOR DESCRIPCION DE LOS TRABAJOS -->
+            <div class="my-5 lg:px-10 lg:my-0 lg:max-w-[800px]">
+                <!-- JOB 1 -->
+                <Job
+                    idJob="job1"
+                    position="Tecnico de TI"
+                    company="Sermicro"
+                    oculto={false}
+                    date="Junio 2023 - Septiembre 2023"
+                    taskList={[
+                        "Herramienta de Ticketing Wrike",
+                        "Instalación/configuración de equipos a través de MS InTune",
+                        "Azure Active Directory",
+                        "Instalación y configuración de VPN",
+                    ]}
+                />
+                <!-- JOB 2 -->
+                <Job
+                    idJob="job2"
+                    position="Tecnico de TI"
+                    company="Sermicro"
+                    oculto={true}
+                    date="Enero 2023 - Febrero 2023"
+                    taskList={[
+                        "Herramienta de Ticketing KACE",
+                        "Instalación/configuración de equipos",
+                        "Active Directory",
+                        "Instalación y configuración de VPN",
+                    ]}
+                />
+                <!-- JOB 3 -->
+                <Job
+                    idJob="job3"
+                    position="Tecnico de TI"
+                    company="CEF"
+                    oculto={true}
+                    date="Julio 2019 - Julio 2022"
+                    taskList={[
+                        "Herramienta de Ticketing Panda",
+                        "Instalación/configuración de equipos",
+                        "Mantenimiento de equipos",
+                        "Active Directory",
+                        "Instalación y configuración de VPN",
+                        "Herramienta de congelamiento de equipos",
+                        "Manejo básico de Moodle",
+                    ]}
+                />
+            </div>
+        </section>
+
+        <!-- Seccion Proyectos -->
+        <h3
+            class="text-3xl text-slate-700 dark:text-white font-bold tracking-widest w-[85%] m-auto text-center pt-8"
+        >
+            Mis Proyectos
+        </h3>
+        <section
+            class="my-12 flex flex-col items-center justify-center w-[90%] m-auto lg:flex-row"
+        >
+            <!-- Proyectos -->
+            <Project
+                img="gym_verse.png"
+                altText="Imagen vista de los ejercicios"
+                projectName="The Gym Verse"
+                technologies={["Angular", "Bootstrap", "TS"]}
+                githubLink="https://github.com/whoskelos/the-gym-verse"
+                visitLink="https://gym.whoskelos.es/"
+            />
+            <Project
+                img="digital_dreams.png"
+                altText="Imagen vista del dashboard"
+                projectName="Digital Dreams Dashboard"
+                technologies={["Angular", "Bootstrap", "TS"]}
+                githubLink="https://github.com/whoskelos/app-digitalDreams"
+                visitLink="https://ddreams.whoskelos.es/auth/login"
+            />
+            <Project
+                img="nameMyPet.png"
+                altText="Imagen del menu inicial"
+                projectName="Name My Pet"
+                technologies={["EJS", "Bootstrap", "Node.js"]}
+                githubLink="https://github.com/whoskelos/app-petNameGenerator"
+                visitLink="https://quiet-sunset-9039.fly.dev/"
+            />
+        </section>
+
+        <!-- Seccion de contactos -->
+        <h3
+            class="text-3xl text-slate-700 dark:text-white mt-12 mb-10 px-10 font-bold tracking-widest text-center"
+        >
+            Contacto
+        </h3>
+
+        <section class="flex flex-col w-[90%] m-auto">
+            <form
+                action="https://formsubmit.co/f09f62d1aba50a8f6281da703a3a2ae0"
+                method="POST"
+                class="w-[90%] md:max-w-[600px] m-auto"
+            >
+                <div class="">
+                    <input
+                        type="email"
+                        name="email"
+                        id="email"
+                        placeholder="email@gmail.com"
+                        class="text-slate-700 py-3 p-3 w-full rounded-lg focus:outline-none focus:ring focus:ring-blue-400"
+                    />
+                </div>
+                <div class="py-3">
+                    <input
+                        type="text"
+                        name="nombre"
+                        id="nombre"
+                        placeholder="Nombre"
+                        class="text-slate-700 py-3 p-3 w-full rounded-lg focus:outline-none focus:ring focus:ring-blue-400"
+                    />
+                </div>
+                <div>
+                    <textarea
+                        name="msj"
+                        id="msj"
+                        rows="5"
+                        placeholder="Mensaje"
+                        class="text-slate-700 py-3 p-3 w-full rounded-lg focus:outline-none focus:ring focus:ring-blue-400"
+                    ></textarea>
+                </div>
+                <div class="my-3">
+                    <button
+                        type="submit"
+                        class="bg-sky-600 text-white p-3 w-full rounded-lg text-xl tracking-widest"
+                        >Enviar Mensaje</button
+                    >
+                    <input type="hidden" name="_captcha" value="false">
+                </div>
+            </form>
+        </section>
+
+        <!-- Footer -->
+        <footer class="text-center mt-12 mb-5">
+            <p>Kelvin Guerrero 2023. All rights reserved ®️</p>
+            <div class="my-2 text-2xl [&>a]:px-2">
+                <a href="https://twitter.com/whoskelos" target="_blank"
+                    ><i class="bi bi-twitter hover:text-sky-600"></i></a
+                >
+                <a href="https://www.instagram.com/ng.apps/" target="_blank"
+                    ><i class="bi bi-instagram hover:text-sky-600"></i></a
+                >
+                <a
+                    href="https://www.linkedin.com/in/kelvinguerreromite/"
+                    target="_blank"
+                    ><i class="bi bi-linkedin hover:text-sky-600"></i></a
+                >
+                <a href="https://github.com/whoskelos" target="_blank"
+                    ><i class="bi bi-github hover:text-sky-600"></i></a
+                >
+            </div>
+        </footer>
     </main>
 </Layout>
-
-<style>
-    .efectoLetra {
-        display: block;
-        font-family: monospace;
-        white-space: nowrap;
-        border-right: 3px solid;
-        width: 15.1ch;
-        animation: typing 2s steps(16), blink 0.5s infinite step-end alternate;
-
-        overflow: hidden;
-    }
-
-    @keyframes typing {
-        from {
-            width: 0;
-        }
-    }
-
-    @keyframes blink {
-        50% {
-            border-color: transparent;
-        }
-    }
-</style>

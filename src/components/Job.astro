@@ -1,0 +1,32 @@
+---
+interface Props {
+    idJob: string;
+    position: string;
+    company: string;
+    date: string;
+    oculto: boolean;
+    taskList: string[];
+}
+
+const { idJob, position, company, date, taskList, oculto } = Astro.props;
+---
+
+<article id={idJob} class:list={['', {hidden: oculto}]}>
+    <h3>
+        {position}
+        <span class="text-sky-500 font-bold text-lg">@{company}</span>
+    </h3>
+    <h4 class="text-sm pb-5">{date}</h4>
+    <ul class="[&>li]:flex items-center py-2">
+        {
+            taskList.map((task) => (
+                <li>
+                    <span class="pr-2 text-sky-500 font-black">🔷</span>
+                    <p class="text-stone-900 dark:text-cyan-50 font-normal px-5">
+                        {task}
+                    </p>
+                </li>
+            ))
+        }
+    </ul>
+</article>
