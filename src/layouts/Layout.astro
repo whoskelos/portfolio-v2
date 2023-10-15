@@ -63,8 +63,37 @@ const { title } = Astro.props;
                 });
             });
 
-            document.getElementById('btn-contratar').addEventListener('click', () => {
-                window.open('https://t.me/kelvinguerreromite')
+            document
+                .getElementById("btn-contratar")
+                .addEventListener("click", () => {
+                    window.open("https://t.me/kelvinguerreromite");
+                });
+
+            function checkScrollPosition() {
+                const scrollButton = document.getElementById("upBtn");
+                const content = document.getElementById("content");
+
+                // Calcula la posición actual del desplazamiento vertical
+                const scrollY = window.scrollY;
+                const contentHeight = content.clientHeight;
+                const windowHeight = window.innerHeight;
+
+                // Muestra u oculta el botón basado en la posición del desplazamiento
+                if (scrollY > contentHeight - windowHeight) {
+                    scrollButton.classList.remove("hidden");
+                } else {
+                    scrollButton.classList.add("hidden");
+                }
+            }
+
+            // Agrega un event listener para verificar la posición de desplazamiento al desplazar la página
+            window.addEventListener("scroll", checkScrollPosition);
+
+            // También verifica la posición de desplazamiento cuando la página se carga inicialmente
+            window.addEventListener("load", checkScrollPosition);
+
+            document.getElementById("upBtn").addEventListener('click', () => {
+                window.scrollTo(0,0)
             })
         </script>
         <title>{title}</title>

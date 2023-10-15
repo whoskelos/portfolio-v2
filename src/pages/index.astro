@@ -7,9 +7,9 @@ import Layout from "../layouts/Layout.astro";
 
 <Layout title="Kelvin Guerrero | Desarrollador Full-stack">
     <Header />
-    <main>
+    <main id="content">
         <!--Seccion HERO -->
-        <section class="my-0 flex flex-col lg:flex-row lg:h-[850px]">
+        <section class="my-0 flex flex-col lg:flex-row lg:h-[850px]" id="heroSection">
             <div class="p-10 lg:w-[80%] lg:h-[500px] lg:self-center">
                 <h1
                     class="text-sky-600 dark:text-sky-300 text-2xl font-bold tracking-widest leading-10"
@@ -155,11 +155,13 @@ import Layout from "../layouts/Layout.astro";
 
         <!-- Seccion Proyectos -->
         <h3
+        id="projectSection"
             class="text-3xl text-slate-700 dark:text-white font-bold tracking-widest w-[85%] m-auto text-center pt-8"
         >
             Mis Proyectos
         </h3>
         <section
+            
             class="my-12 flex flex-col items-center justify-center w-[90%] m-auto lg:flex-row"
         >
             <!-- Proyectos -->
@@ -189,14 +191,36 @@ import Layout from "../layouts/Layout.astro";
             />
         </section>
 
+        <!-- Seccion sobre mi -->
+        <h3
+        id="aboutMeSection"
+            class="text-3xl text-slate-700 dark:text-white font-bold tracking-widest w-[85%] m-auto text-center pt-8"
+        >
+            Sobre Mi
+        </h3>
+
+        <section class="w-[90%] m-auto my-12">
+            <div class="text-lg text-center">
+                <p>
+                    Amante de la tecnologia, disfruto mucho desarrollar
+                    aplicaciones web, el stack actual que he utilizado ha sido
+                    MongoDB, Express, Angular y Node.js, actualmente me
+                    encuentro aprendiendo React para llevar acabo mi proyecto
+                    final de curso.
+                </p>
+                <p>No dudes en contactarme a traves de mis RRSS para cualquier consulta.</p>
+            </div>
+        </section>
+
         <!-- Seccion de contactos -->
         <h3
-            class="text-3xl text-slate-700 dark:text-white mt-12 mb-10 px-10 font-bold tracking-widest text-center"
+        id="contactSection"
+            class="text-3xl text-slate-700 dark:text-white font-bold tracking-widest w-[85%] m-auto text-center pt-8"
         >
             Contacto
         </h3>
 
-        <section class="flex flex-col w-[90%] m-auto">
+        <section class="my-12 flex flex-col w-[90%] m-auto">
             <form
                 action="https://formsubmit.co/f09f62d1aba50a8f6281da703a3a2ae0"
                 method="POST"
@@ -207,6 +231,7 @@ import Layout from "../layouts/Layout.astro";
                         type="email"
                         name="email"
                         id="email"
+                        required
                         placeholder="email@gmail.com"
                         class="text-slate-700 py-3 p-3 w-full rounded-lg focus:outline-none focus:ring focus:ring-blue-400"
                     />
@@ -217,6 +242,7 @@ import Layout from "../layouts/Layout.astro";
                         name="nombre"
                         id="nombre"
                         placeholder="Nombre"
+                        required
                         class="text-slate-700 py-3 p-3 w-full rounded-lg focus:outline-none focus:ring focus:ring-blue-400"
                     />
                 </div>
@@ -226,6 +252,7 @@ import Layout from "../layouts/Layout.astro";
                         id="msj"
                         rows="5"
                         placeholder="Mensaje"
+                        required
                         class="text-slate-700 py-3 p-3 w-full rounded-lg focus:outline-none focus:ring focus:ring-blue-400"
                     ></textarea>
                 </div>
@@ -235,10 +262,12 @@ import Layout from "../layouts/Layout.astro";
                         class="bg-sky-600 text-white p-3 w-full rounded-lg text-xl tracking-widest"
                         >Enviar Mensaje</button
                     >
-                    <input type="hidden" name="_captcha" value="false">
+                    <input type="hidden" name="_captcha" value="false" />
                 </div>
             </form>
         </section>
+        <!--Boton para subir -->
+        <button id="upBtn" class="w-[60px] h-[60px] bg-sky-600 fixed bottom-5 right-5 hover:cursor-pointer shadow-md text-white rounded-full uppercase font-bold tracking-widest hidden">Subir</button>
 
         <!-- Footer -->
         <footer class="text-center mt-12 mb-5">
