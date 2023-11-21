@@ -1,16 +1,15 @@
-# Kelvin Guerrero 
+# 💼 Portfolio: Kelvin Guerrero 
 
-```
-npm create astro@latest -- --template basics
-```
+## 📎[Visit here]("https://kelvinguerrero.dev")
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/basics)
-[![Open with CodeSandbox](https://assets.codesandbox.io/github/button-edit-lime.svg)](https://codesandbox.io/p/sandbox/github/withastro/astro/tree/latest/examples/basics)
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/withastro/astro?devcontainer_path=.devcontainer/basics/devcontainer.json)
+Starting the project in Development mode
+```
+npm run dev
+```
 
 > 🏠 **Home**
 
-![just-the-basics](./public/assets/img/home.png)
+![Home](./public/img/inicio.png)
 
 ## 🚀 Project Structure
 
@@ -20,9 +19,21 @@ Inside of your Astro project, you'll see the following folders and files:
 /
 ├── public/
 │   └── favicon.svg
+|   └── assets/
+|        └── fonts/
+|           └── Roboto-Regular.ttf
+|   └── img/
+|       └── digital_dreams.png
+|       └── gym_verse.png
+|       └── inicio.png
+|       └── kelvin-ia.png
+|       └── Kelvin.png
+|       └── nameMyPet.png
 ├── src/
 │   ├── components/
-│   │   └── Card.astro
+│   │   └── Header.astro
+│   │   └── Job.astro
+│   │   └── Project.astro
 │   ├── layouts/
 │   │   └── Layout.astro
 │   └── pages/
