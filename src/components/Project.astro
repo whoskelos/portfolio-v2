@@ -23,7 +23,7 @@ const { img, projectName, technologies, altText, githubLink, visitLink } = Astro
             <div class="flex flex-nowrap items-center">
                 {
                     technologies.map((tech) => (
-                        <span class="bg-slate-200 rounded-lg px-2 mr-2 text-slate-700">
+                        <span class="bg-slate-200 hover:bg-sky-600 hover:text-white rounded-lg px-2 mr-2 text-slate-700">
                             {tech}
                         </span>
                     ))
@@ -32,8 +32,8 @@ const { img, projectName, technologies, altText, githubLink, visitLink } = Astro
             <div
                 class="text-xl text-slate-600 dark:text-slate-200 pr-2 flex flex-nowrap"
             >
-                <a href={githubLink} target="_blank"><i class="bi bi-github px-2"></i></a>
-                <a href={visitLink} target="_blank"><i class="bi bi-eye px-2"></i></a>
+                <a href={githubLink} target="_blank"><i class="bi bi-github px-2 hover:text-purple-600"></i></a>
+                <a href={visitLink} target="_blank"><i class="bi bi-eye px-2 hover:text-yellow-400"></i></a>
             </div>
         </article>
     </div>

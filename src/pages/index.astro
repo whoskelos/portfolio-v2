@@ -9,17 +9,20 @@ import Layout from "../layouts/Layout.astro";
     <Header />
     <main id="content">
         <!--Seccion HERO -->
-        <section class="my-0 flex flex-col lg:flex-row lg:h-[850px]" id="heroSection">
+        <section
+            class="my-0 flex flex-col lg:flex-row lg:h-[850px]"
+            id="heroSection"
+        >
             <div class="p-10 lg:w-[80%] lg:h-[500px] lg:self-center">
                 <h1
                     class="text-sky-600 dark:text-sky-300 text-2xl font-bold tracking-widest leading-10"
                 >
-                    Hola, soy
+                    Hola,
                 </h1>
                 <p
                     class="py-2 text-3xl font-bold text-slate-600 dark:text-slate-300"
                 >
-                    Kelvin Guerrero
+                soy Kelvin Guerrero
                 </p>
                 <p
                     class="text-3xl font-bold text-slate-500 dark:text-slate-600"
@@ -34,22 +37,22 @@ import Layout from "../layouts/Layout.astro";
                 <div class="py-6 [&>a]:pr-2 text-2xl [&>a>i]:px-2">
                     <a
                         href="https://twitter.com/whoskelos"
-                        class="hover:text-sky-600"
+                        class="hover:text-sky-600 transition-colors"
                         target="_blank"><i class="bi bi-twitter"></i></a
                     >
                     <a
                         href="https://www.instagram.com/ng.apps/"
-                        class="hover:text-sky-600"
+                        class="hover:text-sky-600 transition-colors"
                         target="_blank"><i class="bi bi-instagram"></i></a
                     >
                     <a
                         href="https://www.linkedin.com/in/kelvinguerreromite/"
-                        class="hover:text-sky-600"
+                        class="hover:text-sky-600 transition-colors"
                         target="_blank"><i class="bi bi-linkedin"></i></a
                     >
                     <a
                         href="https://github.com/whoskelos"
-                        class="hover:text-sky-600"
+                        class="hover:text-sky-600 transition-colors"
                         target="_blank"><i class="bi bi-github"></i></a
                     >
                 </div>
@@ -63,9 +66,9 @@ import Layout from "../layouts/Layout.astro";
                 </div>
             </div>
             <!--Contenedor para la imagen -->
-            <div class="my-10 w-full">
+            <div class="w-full">
                 <div
-                    class="w-[300px] h-[320px] m-auto bg-[url('/img/kelvin-ia.png')] lg:bg-[url('/img/kelvin-ia.png')] bg-cover rounded-lg lg:w-[100%] lg:h-[100%] lg:bg-center lg:bg-no-repeat lg:bg-[length:450px_450px]"
+                    class="w-[300px] h-[320px] m-auto bg-[url('/img/Kelvin.png')] lg:bg-[url('/img/Kelvin.png')] bg-cover rounded-lg lg:w-[100%] lg:h-[100%] lg:bg-top lg:bg-no-repeat lg:bg-[length:500px_650px]"
                 >
                 </div>
             </div>
@@ -86,31 +89,48 @@ import Layout from "../layouts/Layout.astro";
                     type="button"
                     id="link1"
                     data-id="job1"
-                    class="border-b-2 hover:dark:bg-slate-700 w-full px-4 py-1 hover:bg-white focus:bg-white focus:border-sky-500 focus:dark:bg-slate-700 lg:border-l-2 lg:border-b-0 lg:h-full lg:text-left border-sky-500 bg-white dark:bg-slate-700"
-                    >Via Celere (Sermicro)</button
+                    class="border-b-2 hover:dark:bg-slate-700 w-full px-4 py-3 hover:bg-white focus:bg-white focus:border-sky-500 focus:dark:bg-slate-700 lg:border-l-2 lg:border-b-0 lg:h-full lg:text-left border-sky-500 bg-white dark:bg-slate-700 transition-colors"
+                    >MailComms</button
                 >
                 <button
                     type="button"
                     data-id="job2"
-                    class="border-b-2 hover:dark:bg-slate-700 w-full px-4 py-1 hover:bg-white focus:bg-white focus:border-sky-500 focus:dark:bg-slate-700 lg:border-l-2 lg:border-b-0 lg:h-full lg:text-left"
-                    >Ayto. de la Rozas (Sermicro)</button
+                    class="border-b-2 hover:dark:bg-slate-700 w-full px-4 py-1 hover:bg-white focus:bg-white focus:border-sky-500 focus:dark:bg-slate-700 lg:border-l-2 lg:border-b-0 lg:h-full lg:text-left transition-colors"
+                    >Sermicro</button
                 >
                 <button
                     type="button"
                     data-id="job3"
-                    class="border-b-2 hover:dark:bg-slate-700 w-full px-4 py-1 hover:bg-white focus:bg-white focus:border-sky-500 focus:dark:bg-slate-700 lg:border-l-2 lg:border-b-0 lg:h-full lg:text-left"
-                    >CEF (Centro de Estudios Financieros)</button
+                    class="border-b-2 hover:dark:bg-slate-700 w-full px-4 py-1 hover:bg-white focus:bg-white focus:border-sky-500 focus:dark:bg-slate-700 lg:border-l-2 lg:border-b-0 lg:h-full lg:text-left transition-colors"
+                    >Sermicro</button
                 >
             </div>
 
             <!--CONTENEDOR DESCRIPCION DE LOS TRABAJOS -->
-            <div class="my-5 lg:px-10 lg:my-0 lg:max-w-[800px]">
+            <div class="my-5 md:h-56 lg:px-10 lg:my-0 lg:max-w-[800px]">
                 <!-- JOB 1 -->
                 <Job
                     idJob="job1"
+                    position="Desarrollador Web"
+                    company="Grupo MailComms"
+                    oculto={false}
+                    date="Octubre 2023 - Diciembre 2023"
+                    taskList={[
+                        "HTML",
+                        "CSS",
+                        "Javascript",
+                        "Vue.js",
+                        "PHP",
+                        "Laravel",
+                        "Quadient Inspire Desginer",
+                    ]}
+                />
+                <!-- JOB 2 -->
+                <Job
+                    idJob="job2"
                     position="Tecnico de TI"
                     company="Sermicro"
-                    oculto={false}
+                    oculto={true}
                     date="Junio 2023 - Septiembre 2023"
                     taskList={[
                         "Herramienta de Ticketing Wrike",
@@ -119,9 +139,9 @@ import Layout from "../layouts/Layout.astro";
                         "Instalación y configuración de VPN",
                     ]}
                 />
-                <!-- JOB 2 -->
+                <!-- JOB 3 -->
                 <Job
-                    idJob="job2"
+                    idJob="job3"
                     position="Tecnico de TI"
                     company="Sermicro"
                     oculto={true}
@@ -133,35 +153,17 @@ import Layout from "../layouts/Layout.astro";
                         "Instalación y configuración de VPN",
                     ]}
                 />
-                <!-- JOB 3 -->
-                <Job
-                    idJob="job3"
-                    position="Tecnico de TI"
-                    company="CEF"
-                    oculto={true}
-                    date="Julio 2019 - Julio 2022"
-                    taskList={[
-                        "Herramienta de Ticketing Panda",
-                        "Instalación/configuración de equipos",
-                        "Mantenimiento de equipos",
-                        "Active Directory",
-                        "Instalación y configuración de VPN",
-                        "Herramienta de congelamiento de equipos",
-                        "Manejo básico de Moodle",
-                    ]}
-                />
             </div>
         </section>
 
         <!-- Seccion Proyectos -->
         <h3
-        id="projectSection"
+            id="projectSection"
             class="text-3xl text-slate-700 dark:text-white font-bold tracking-widest w-[85%] m-auto text-center pt-8"
         >
             Mis Proyectos
         </h3>
         <section
-            
             class="my-12 flex flex-col items-center justify-center w-[90%] m-auto lg:flex-row"
         >
             <!-- Proyectos -->
@@ -193,7 +195,7 @@ import Layout from "../layouts/Layout.astro";
 
         <!-- Seccion sobre mi -->
         <h3
-        id="aboutMeSection"
+            id="aboutMeSection"
             class="text-3xl text-slate-700 dark:text-white font-bold tracking-widest w-[85%] m-auto text-center pt-8"
         >
             Sobre Mi
@@ -202,19 +204,22 @@ import Layout from "../layouts/Layout.astro";
         <section class="w-[90%] m-auto my-12">
             <div class="text-lg text-center">
                 <p>
-                    Amante de la tecnologia, disfruto mucho desarrollar
+                    Amante de la tecnología, disfruto mucho desarrollar
                     aplicaciones web, el stack actual que he utilizado ha sido
                     MongoDB, Express, Angular y Node.js, actualmente me
                     encuentro aprendiendo React para llevar acabo mi proyecto
                     final de curso.
                 </p>
-                <p>No dudes en contactarme a traves de mis RRSS para cualquier consulta.</p>
+                <p>
+                    No dudes en contactarme a traves de mis RRSS para cualquier
+                    consulta.
+                </p>
             </div>
         </section>
 
         <!-- Seccion de contactos -->
         <h3
-        id="contactSection"
+            id="contactSection"
             class="text-3xl text-slate-700 dark:text-white font-bold tracking-widest w-[85%] m-auto text-center pt-8"
         >
             Contacto
@@ -259,7 +264,7 @@ import Layout from "../layouts/Layout.astro";
                 <div class="my-3">
                     <button
                         type="submit"
-                        class="bg-sky-600 text-white p-3 w-full rounded-lg text-xl tracking-widest"
+                        class="bg-sky-600 hover:bg-sky-700 text-white p-3 w-full rounded-lg text-xl tracking-widest"
                         >Enviar Mensaje</button
                     >
                     <input type="hidden" name="_captcha" value="false" />
@@ -267,25 +272,29 @@ import Layout from "../layouts/Layout.astro";
             </form>
         </section>
         <!--Boton para subir -->
-        <button id="upBtn" class="w-[60px] h-[60px] bg-sky-600 fixed bottom-5 right-5 hover:cursor-pointer shadow-md text-white rounded-full uppercase font-bold tracking-widest hidden">Subir</button>
+        <button
+            id="upBtn"
+            class="w-[60px] h-[60px] bg-sky-600 hover:bg-sky-700 fixed bottom-5 right-5 hover:cursor-pointer shadow-md text-white rounded-full uppercase font-medium tracking-widest transition-colors hidden"
+            >Subir</button
+        >
 
         <!-- Footer -->
         <footer class="text-center mt-12 mb-5">
             <p>Kelvin Guerrero 2023. All rights reserved ®️</p>
             <div class="my-2 text-2xl [&>a]:px-2">
                 <a href="https://twitter.com/whoskelos" target="_blank"
-                    ><i class="bi bi-twitter hover:text-sky-600"></i></a
+                    ><i class="bi bi-twitter hover:text-sky-600 transition-colors"></i></a
                 >
                 <a href="https://www.instagram.com/ng.apps/" target="_blank"
-                    ><i class="bi bi-instagram hover:text-sky-600"></i></a
+                    ><i class="bi bi-instagram hover:text-sky-600 transition-colors"></i></a
                 >
                 <a
                     href="https://www.linkedin.com/in/kelvinguerreromite/"
                     target="_blank"
-                    ><i class="bi bi-linkedin hover:text-sky-600"></i></a
+                    ><i class="bi bi-linkedin hover:text-sky-600 transition-colors"></i></a
                 >
                 <a href="https://github.com/whoskelos" target="_blank"
-                    ><i class="bi bi-github hover:text-sky-600"></i></a
+                    ><i class="bi bi-github hover:text-sky-600 transition-colors"></i></a
                 >
             </div>
         </footer>
