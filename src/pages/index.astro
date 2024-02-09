@@ -68,7 +68,7 @@ import Layout from "../layouts/Layout.astro";
             <!--Contenedor para la imagen -->
             <div class="w-full">
                 <div
-                    class="w-[300px] h-[320px] m-auto bg-[url('/img/Kelvin.png')] lg:bg-[url('/img/Kelvin.png')] bg-cover rounded-lg lg:w-[100%] lg:h-[100%] lg:bg-top lg:bg-no-repeat lg:bg-[length:500px_650px]"
+                    class="w-[300px] h-[320px] m-auto bg-[url('/img/kelvin-2.png')] lg:bg-[url('/img/kelvin-2.png')] bg-cover rounded-lg lg:w-[100%] lg:h-[100%] lg:bg-top lg:bg-no-repeat lg:bg-[length:600px_600px]"
                 >
                 </div>
             </div>
@@ -96,7 +96,7 @@ import Layout from "../layouts/Layout.astro";
                     type="button"
                     data-id="job2"
                     class="border-b-2 hover:dark:bg-slate-700 w-full px-4 py-1 hover:bg-white focus:bg-white focus:border-sky-500 focus:dark:bg-slate-700 lg:border-l-2 lg:border-b-0 lg:h-full lg:text-left transition-colors"
-                    >Sermicro</button
+                    >MailComms</button
                 >
                 <button
                     type="button"
@@ -114,6 +114,24 @@ import Layout from "../layouts/Layout.astro";
                     position="Desarrollador Web"
                     company="Grupo MailComms"
                     oculto={false}
+                    date="Diciembre 2023 - Actualidad"
+                    taskList={[
+                        "HTML",
+                        "CSS",
+                        "Javascript",
+                        "Vue.js",
+                        "PHP",
+                        "Laravel",
+                        "MySql",
+                        "SolR",
+                    ]}
+                />
+                <!-- JOB 2 -->
+                <Job
+                    idJob="job2"
+                    position="Desarrollador en prácticas"
+                    company="Grupo MailComms"
+                    oculto={true}
                     date="Octubre 2023 - Diciembre 2023"
                     taskList={[
                         "HTML",
@@ -125,20 +143,6 @@ import Layout from "../layouts/Layout.astro";
                         "Quadient Inspire Desginer",
                     ]}
                 />
-                <!-- JOB 2 -->
-                <Job
-                    idJob="job2"
-                    position="Tecnico de TI"
-                    company="Sermicro"
-                    oculto={true}
-                    date="Junio 2023 - Septiembre 2023"
-                    taskList={[
-                        "Herramienta de Ticketing Wrike",
-                        "Instalación/configuración de equipos a través de MS InTune",
-                        "Azure Active Directory",
-                        "Instalación y configuración de VPN",
-                    ]}
-                />
                 <!-- JOB 3 -->
                 <Job
                     idJob="job3"
@@ -147,9 +151,9 @@ import Layout from "../layouts/Layout.astro";
                     oculto={true}
                     date="Enero 2023 - Febrero 2023"
                     taskList={[
-                        "Herramienta de Ticketing KACE",
-                        "Instalación/configuración de equipos",
-                        "Active Directory",
+                        "Herramienta de Ticketing Wrike",
+                        "Instalación/configuración de equipos a través de MS InTune ",
+                        "Azure Active Directory",
                         "Instalación y configuración de VPN",
                     ]}
                 />
