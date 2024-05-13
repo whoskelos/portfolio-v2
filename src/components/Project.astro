@@ -8,33 +8,40 @@ interface Props {
     visitLink: string;
 }
 
-const { img, projectName, technologies, altText, githubLink, visitLink } = Astro.props;
+const { img, projectName, technologies, altText, githubLink, visitLink } =
+    Astro.props;
 ---
 
-<div class="border-1 rounden-lg bg-white dark:bg-slate-800 m-5">
-    <div class="m-2">
-        <img
-            class="opacity-80 hover:opacity-100"
-            src=`/img/${img}`
-            alt={altText}
-        />
-        <h4 class="font-bold my-2">{projectName}</h4>
-        <article class="flex justify-between">
-            <div class="flex flex-nowrap items-center">
-                {
-                    technologies.map((tech) => (
-                        <span class="bg-slate-200 hover:bg-sky-600 hover:text-white rounded-lg px-2 mr-2 text-slate-700">
-                            {tech}
-                        </span>
-                    ))
-                }
-            </div>
-            <div
-                class="text-xl text-slate-600 dark:text-slate-200 pr-2 flex flex-nowrap"
+<div
+    class="w-full md:w-[70%] border-1 rounded-md bg-white dark:bg-slate-800 shadow-lg p-4"
+>
+    <img
+        class="w-full h-48 opacity-80 hover:opacity-100 rounded-lg object-contain"
+        src=`/img/${img}`
+        alt={altText}
+    />
+    <h4 class="font-bold my-2">{projectName}</h4>
+    <article
+        class="flex items-center justify-between gap-4"
+    >
+        <div class="flex flex-wrap items-center gap-2">
+            {
+                technologies.map((tech) => (
+                    <span class="bg-slate-200 hover:bg-sky-600 hover:text-white rounded-lg px-2 mr-2 text-slate-700">
+                        {tech}
+                    </span>
+                ))
+            }
+        </div>
+        <div
+            class="text-xl text-slate-600 dark:text-slate-200 flex items-center justify-center flex-wrap gap-2"
+        >
+            <a href={githubLink} target="_blank"
+                ><i class="bi bi-github hover:text-purple-600"></i></a
             >
-                <a href={githubLink} target="_blank"><i class="bi bi-github px-2 hover:text-purple-600"></i></a>
-                <a href={visitLink} target="_blank"><i class="bi bi-eye px-2 hover:text-yellow-400"></i></a>
-            </div>
-        </article>
-    </div>
+            <a href={visitLink} target="_blank"
+                ><i class="bi bi-eye hover:text-yellow-400"></i></a
+            >
+        </div>
+    </article>
 </div>

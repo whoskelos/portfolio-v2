@@ -7,7 +7,7 @@ import Layout from "../layouts/Layout.astro";
 
 <Layout title="Kelvin Guerrero | Desarrollador Full-stack">
     <Header />
-    <main id="content">
+    <main id="content" class="lg:max-w-[70%] lg:m-auto">
         <!--Seccion HERO -->
         <section
             class="my-0 flex flex-col lg:flex-row lg:h-[850px]"
@@ -116,14 +116,12 @@ import Layout from "../layouts/Layout.astro";
                     oculto={false}
                     date="Diciembre 2023 - Actualidad"
                     taskList={[
-                        "HTML",
-                        "CSS",
-                        "Javascript",
-                        "Vue.js",
-                        "PHP",
-                        "Laravel",
-                        "MySql",
-                        "SolR",
+                        "Desarrollo front-end utilizando Vue.js, Javascript Vanilla y jQuery.",
+                        "Desarrollo de API RESTful utilizando Laravel para la comunicación entre el front-end y el back-end.",
+                        "Desarrollo de funciones en PHP para interactuar con la API de AWS S3 Glacier.",
+                        "Diseño e implementación de bases de datos MySQL para almacenar y recuperar datos.",
+                        "Diseños web responsivos utilizando Bootstrap.",
+                        "Metodología Agile con la herramienta “YouTrack” a través de sprints",
                     ]}
                 />
                 <!-- JOB 2 -->
@@ -168,7 +166,7 @@ import Layout from "../layouts/Layout.astro";
             Mis Proyectos
         </h3>
         <section
-            class="my-12 flex flex-col items-center justify-center w-[90%] m-auto lg:flex-row"
+            class="w-[90%] m-auto my-12 flex flex-col items-center justify-center lg:flex-row gap-4"
         >
             <!-- Proyectos -->
             <Project
@@ -183,7 +181,7 @@ import Layout from "../layouts/Layout.astro";
                 img="gamekzone.png"
                 altText="Tienda de clave de videojuegos"
                 projectName="Game Key Zone"
-                technologies={["React.js", "Tailwind", "MERN", "PayPal", "Resend"]}
+                technologies={["React.js", "Tailwind", "PayPal"]}
                 githubLink="https://github.com/whoskelos/front-tfc"
                 visitLink="https://gamekzone.kelvinguerrero.dev/"
             />
@@ -206,13 +204,9 @@ import Layout from "../layouts/Layout.astro";
         </h3>
 
         <section class="w-[90%] m-auto my-12">
-            <div class="text-lg text-center">
+            <div class="text-lg text-balance leading-relaxed">
                 <p>
-                    Apasionado de la informática, me dedico al desarrollo web. Constantemente busco aprender nuevas habilidades y mantenerme actualizado con las últimas tendencias tecnológicas. Actualmente, me estoy especializando en React, y tengo experiencia en HTML, CSS, JavaScript, Vue, Laravel, Bootstrap, Tailwind CSS, Node.js, Express, MongoDB, MySQL.
-                </p>
-                <p>
-                    No dudes en contactarme a traves de mis RRSS para cualquier
-                    consulta.
+                    Profesional con experiencia en el desarrollo de aplicaciones web <strong>full-stack.</strong> Poseo un sólido conocimiento de <strong>Javascript</strong> para la creación de interfaces web interactivas y atractivas.
                 </p>
             </div>
         </section>
