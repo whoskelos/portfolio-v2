@@ -1,6 +1,6 @@
 ---
 interface Props {
-    title: string;
+  title: string;
 }
 
 const { title } = Astro.props;
@@ -8,120 +8,138 @@ const { title } = Astro.props;
 
 <!DOCTYPE html>
 <html lang="es">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="description" content="Sitio web personal" />
-        <meta name="viewport" content="width=device-width" />
-        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-        <meta name="generator" content={Astro.generator} />
-        <meta
-            name="description"
-            content="Kelvin Guerrero - Desarrollador Web Full-stack"
-        />
-        <meta property="og:image" content="/img/kelvin-ia.png" />
-        <link
-            rel="stylesheet"
-            href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css"
-        />
-        <script>
-            // On page load or when changing themes, best to add inline in `head` to avoid FOUC
-            if (
-                localStorage.getItem("color-theme") === "dark" ||
-                (!("color-theme" in localStorage) &&
-                    window.matchMedia("(prefers-color-scheme: dark)").matches)
-            ) {
-                document.documentElement.classList.add("dark");
-            } else {
-                document.documentElement.classList.remove("dark");
-            }
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content="Sitio web personal" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <meta
+      name="description"
+      content="Kelvin Guerrero - Desarrollador Web Full-stack"
+    />
+    <meta property="og:image" content="/img/kelvin-ia.png" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css"
+    />
+    <script>
+      // On page load or when changing themes, best to add inline in `head` to avoid FOUC
+      if (
+        localStorage.getItem("color-theme") === "dark" ||
+        (!("color-theme" in localStorage) &&
+          window.matchMedia("(prefers-color-scheme: dark)").matches)
+      ) {
+        document.documentElement.classList.add("dark");
+      } else {
+        document.documentElement.classList.remove("dark");
+      }
 
-            /** Job section */
-            const jobSection = document.querySelector("#jobSection");
-            const articles = document.querySelectorAll("#jobSection article");
+      /** Job section */
+      const jobSection = document.querySelector("#jobSection");
+      const articles = document.querySelectorAll("#jobSection article");
 
-            jobSection.addEventListener("click", (event) => {
-                const id = event.target.dataset.id;
-                if (id) {
-                    articles.forEach((article) => {
-                        article.classList.add("hidden");
-                    });
-                    const element = document.getElementById(id);
-                    element.classList.remove("hidden");
-                }
-            });
+      jobSection.addEventListener("click", (event) => {
+        const id = event.target.dataset.id;
+        if (id) {
+          articles.forEach((article) => {
+            article.classList.add("hidden");
+          });
+          const element = document.getElementById(id);
+          element.classList.remove("hidden");
+        }
+      });
 
-            const jobLinks = document.querySelectorAll("#jobSection button");
-            const firstLink = document.querySelector("#link1");
+      const jobLinks = document.querySelectorAll("#jobSection button");
+      const firstLink = document.querySelector("#link1");
 
-            jobLinks.forEach((link) => {
-                link.addEventListener("click", () => {
-                    firstLink.classList.remove(
-                        "border-sky-500",
-                        "bg-white",
-                        "dark:bg-slate-700"
-                    );
-                });
-            });
+      jobLinks.forEach((link) => {
+        link.addEventListener("click", () => {
+          firstLink.classList.remove(
+            "border-sky-500",
+            "bg-white",
+            "dark:bg-slate-700"
+          );
+        });
+      });
 
-            document
-                .getElementById("btn-contratar")
-                .addEventListener("click", () => {
-                    window.open("https://t.me/kelvinguerreromite");
-                });
+      document.getElementById("btn-contratar").addEventListener("click", () => {
+        window.open("https://t.me/kelvinguerreromite");
+      });
 
-            function checkScrollPosition() {
-                const scrollButton = document.getElementById("upBtn");
-                const content = document.getElementById("content");
+      function checkScrollPosition() {
+        const scrollButton = document.getElementById("upBtn");
+        const content = document.getElementById("content");
 
-                // Calcula la posición actual del desplazamiento vertical
-                const scrollY = window.scrollY;
-                const contentHeight = content.clientHeight;
-                const windowHeight = window.innerHeight;
+        // Calcula la posición actual del desplazamiento vertical
+        const scrollY = window.scrollY;
+        const contentHeight = content.clientHeight;
+        const windowHeight = window.innerHeight;
 
-                // Muestra u oculta el botón basado en la posición del desplazamiento
-                if (scrollY > contentHeight - windowHeight) {
-                    scrollButton.classList.remove("hidden");
-                } else {
-                    scrollButton.classList.add("hidden");
-                }
-            }
+        // Muestra u oculta el botón basado en la posición del desplazamiento
+        if (scrollY > contentHeight - windowHeight) {
+          scrollButton.classList.remove("hidden");
+        } else {
+          scrollButton.classList.add("hidden");
+        }
+      }
 
-            // Agrega un event listener para verificar la posición de desplazamiento al desplazar la página
-            window.addEventListener("scroll", checkScrollPosition);
+      // Agrega un event listener para verificar la posición de desplazamiento al desplazar la página
+      window.addEventListener("scroll", checkScrollPosition);
 
-            // También verifica la posición de desplazamiento cuando la página se carga inicialmente
-            window.addEventListener("load", checkScrollPosition);
+      // También verifica la posición de desplazamiento cuando la página se carga inicialmente
+      window.addEventListener("load", checkScrollPosition);
 
-            document.getElementById("upBtn").addEventListener('click', () => {
-                window.scrollTo(0,0)
-            })
-        </script>
-        <title>{title}</title>
-    </head>
-    <body class="bg-sky-100 text-stone-900 dark:bg-slate-950 dark:text-cyan-50">
-        <slot />
-    </body>
+      document.getElementById("upBtn").addEventListener("click", () => {
+        window.scrollTo(0, 0);
+      });
+    </script>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org/",
+        "@type": "WebDevelopmentService",
+        "name": "Kelvin Guerrero - Desarrollo Web",
+        "description": "Creación y despliegue de páginas web, aplicaciones web, tiendas online y mantenimiento web",
+        "areaServed": "ES",
+        "availability": "24/7",
+        "priceRange": "$$",
+        "keywords": "desarrollo web, creación web, aplicaciones web, tiendas online, mantenimiento web, España, 24 horas, 7 días, info@kelvinguerrero.dev",
+        "contactPoint": {
+          "@type": "ContactPoint",
+          "email": "info@kelvinguerrero.dev"
+        },
+        "hasLocalBusiness": {
+          "@type": "LocalBusiness",
+          "legalName": "Kelvin Guerrero - Desarrollo Web"
+        }
+      }
+    </script>
+    <title>{title}</title>
+  </head>
+  <body class="bg-sky-100 text-stone-900 dark:bg-slate-950 dark:text-cyan-50">
+    <slot />
+  </body>
 </html>
 
 <style is:global>
-    html {
-        scroll-behavior: smooth;
-    }
-    @font-face {
-        font-family: "Roboto-Regular";
-        src: url("/assets/fonts/Roboto-Regular.ttf");
-    }
+  html {
+    scroll-behavior: smooth;
+  }
+  @font-face {
+    font-family: "Roboto-Regular";
+    src: url("/assets/fonts/Roboto-Regular.ttf");
+  }
 
-    /**Scrollbar */
-    ::-webkit-scrollbar {
-        width: 10px;
-    }
+  /**Scrollbar */
+  ::-webkit-scrollbar {
+    width: 10px;
+  }
 
-    ::-webkit-scrollbar-track {
-        background: #a9ceff;
-    }
-    ::-webkit-scrollbar-thumb {
-        background: linear-gradient(#304663, #426ee6);
-        border-radius: 10px;
-    }
+  ::-webkit-scrollbar-track {
+    background: #a9ceff;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: linear-gradient(#304663, #426ee6);
+    border-radius: 10px;
+  }
 </style>
