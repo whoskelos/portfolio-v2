@@ -19,7 +19,7 @@ const { idJob, position, company, date, taskList, oculto } = Astro.props;
     <h4 class="text-sm pb-5">{date}</h4>
     <ul class="[&>li]:flex items-center py-2">
         {
-            taskList.map((task) => (
+            taskList.map((task: string) => (
                 <li>
                     <span class="pr-2 text-sky-500 font-black">🔷</span>
                     <p class="text-stone-900 dark:text-cyan-50 font-normal px-5">
