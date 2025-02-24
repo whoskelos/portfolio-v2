@@ -71,10 +71,10 @@ import Layout from "../layouts/Layout.astro";
             Experiencia laboral
         </h2>
         <section
-            class="my-12 flex flex-col w-[84%] m-auto lg:flex-row lg:w-[87%] lg:my-28"
+            class="my-12 flex flex-col w-[84%] m-auto lg:flex-row lg:w-[87%] lg:my-28 overflow-x-hidden md:overflow-hidden"
             id="jobSection"
         >
-            <div class="flex justify-between lg:flex-col lg:w-[20%]">
+            <div class="flex justify-between lg:flex-col lg:w-[20%] jobs-buttons">
                 <button
                     type="button"
                     id="link1"
@@ -285,3 +285,12 @@ import Layout from "../layouts/Layout.astro";
         </footer>
     </main>
 </Layout>
+
+<style>
+    .jobs-buttons {
+        overflow-x: scroll;
+    }
+    .jobs-buttons::-webkit-scrollbar {
+        display: none;
+    }
+</style>
