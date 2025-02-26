@@ -9,7 +9,7 @@ npm run dev
 
 > 🏠 **Home**
 
-![Home](./public/img/inicio.png)
+![Home](./public/img/inicio.webp)
 
 ## 🚀 Project Structure
 
