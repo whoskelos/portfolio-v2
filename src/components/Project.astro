@@ -36,9 +36,13 @@ const { img, projectName, technologies, altText, githubLink, visitLink } =
         <div
             class="text-xl text-slate-600 dark:text-slate-200 flex items-center justify-center flex-wrap gap-2"
         >
-            <a href={githubLink} target="_blank"
-                ><i class="bi bi-github hover:text-purple-600"></i></a
-            >
+            {
+                githubLink && (
+                    <a href={githubLink} target="_blank"
+                        ><i class="bi bi-github hover:text-purple-600"></i></a
+                    >
+                )
+            }
             <a href={visitLink} target="_blank"
                 ><i class="bi bi-eye hover:text-yellow-400"></i></a
             >
